@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Mis tareas</h1>
+
+        <form id="form-tarea" class="nueva">
+            <input type="text" id="input-tarea" placeholder="Nueva tarea..." autocomplete="off" required>
+            <button type="submit">Añadir</button>
+        </form>
+
+        <nav class="filtros" id="filtros" aria-label="Filtros">
+            <button class="filtro activo" data-filtro="todas">Todas</button>
+            <button class="filtro" data-filtro="pendientes">Pendientes</button>
+            <button class="filtro" data-filtro="completadas">Completadas</button>
+        </nav>
+
+        <ul id="lista" class="lista"></ul>
+
+        <footer class="info">
+            <span id="contador">0 tareas pendientes</span>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

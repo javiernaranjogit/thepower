@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Avanzada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <h1>Mis Tareas</h1>
+
+        <form id="formTarea" class="form">
+            <input type="text" id="txtTarea" placeholder="Nueva tarea..." required>
+            <select id="selPrioridad">
+                <option value="alta">Alta</option>
+                <option value="media" selected>Media</option>
+                <option value="baja">Baja</option>
+            </select>
+            <input type="date" id="fechaLimite">
+            <button type="submit">Añadir</button>
+        </form>
+
+        <p class="hint">Doble click en una tarea para editarla. Arrastra para reordenar.</p>
+
+        <ul id="lista" class="lista"></ul>
+    </div>
+
+    <template id="tplTarea">
+        <li class="tarea" draggable="true">
+            <span class="tarea__drag">&#9776;</span>
+            <span class="tarea__texto"></span>
+            <span class="tarea__fecha"></span>
+            <button class="btn btn--edit" data-accion="editar">Editar</button>
+            <button class="btn btn--del"  data-accion="eliminar">X</button>
+        </li>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

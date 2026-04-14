@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería con Filtros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Galería</h1>
+        <div class="filtros" id="filtros">
+            <button class="chip chip--active" data-categoria="todas">Todas</button>
+        </div>
+        <input type="search" id="buscador" placeholder="Buscar por tag (ej: montaña, ciudad)...">
+    </header>
+
+    <main>
+        <div id="galeria" class="galeria"></div>
+        <p id="vacio" class="vacio" hidden>No hay resultados.</p>
+    </main>
+
+    <div id="modal" class="modal" hidden>
+        <button class="modal__cerrar" data-accion="cerrar">&times;</button>
+        <button class="modal__nav modal__nav--prev" data-accion="prev">&#10094;</button>
+        <img class="modal__img" alt="">
+        <button class="modal__nav modal__nav--next" data-accion="next">&#10095;</button>
+        <p class="modal__info"></p>
+    </div>
+
+    <template id="tplItem">
+        <figure class="item">
+            <img class="item__img" data-src="" alt="">
+            <figcaption class="item__cap"></figcaption>
+        </figure>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

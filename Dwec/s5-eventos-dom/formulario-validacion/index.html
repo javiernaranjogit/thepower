@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con validación en tiempo real</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Registro de usuario</h1>
+        <form id="formulario" novalidate>
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" autocomplete="name">
+                <small class="error" id="error-nombre"></small>
+            </div>
+
+            <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email">
+                <small class="error" id="error-email"></small>
+            </div>
+
+            <div class="campo">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" name="edad" min="18" max="99">
+                <small class="error" id="error-edad"></small>
+            </div>
+
+            <div class="campo">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" autocomplete="new-password">
+                <small class="error" id="error-password"></small>
+            </div>
+
+            <button type="submit" id="submit" disabled>Enviar</button>
+        </form>
+
+        <section id="resumen" class="resumen oculto" aria-live="polite"></section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

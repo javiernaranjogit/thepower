@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario multipaso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Registro en 3 pasos</h1>
+
+        <div class="progreso">
+            <div class="progreso-barra">
+                <div id="progresoRelleno" class="progreso-relleno"></div>
+            </div>
+            <div class="pasos-indicador">
+                <span class="paso-ind activo" data-paso="1">1. Datos</span>
+                <span class="paso-ind" data-paso="2">2. Dirección</span>
+                <span class="paso-ind" data-paso="3">3. Preferencias</span>
+            </div>
+        </div>
+
+        <form id="formMulti" novalidate>
+            <!-- Paso 1 -->
+            <fieldset class="paso activo" data-paso="1">
+                <legend>Datos personales</legend>
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <span class="error" data-error-for="nombre"></span>
+                </div>
+                <div class="campo">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                    <span class="error" data-error-for="apellidos"></span>
+                </div>
+                <div class="campo">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error" data-error-for="email"></span>
+                </div>
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                    <span class="error" data-error-for="telefono"></span>
+                </div>
+            </fieldset>
+
+            <!-- Paso 2 -->
+            <fieldset class="paso" data-paso="2">
+                <legend>Dirección</legend>
+                <div class="campo">
+                    <label for="calle">Calle y número</label>
+                    <input type="text" id="calle" name="calle" required>
+                    <span class="error" data-error-for="calle"></span>
+                </div>
+                <div class="campo">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" required>
+                    <span class="error" data-error-for="ciudad"></span>
+                </div>
+                <div class="campo">
+                    <label for="codigo_postal">Código postal</label>
+                    <input type="text" id="codigo_postal" name="codigo_postal" required pattern="[0-9]{5}">
+                    <span class="error" data-error-for="codigo_postal"></span>
+                </div>
+                <div class="campo">
+                    <label for="pais">País</label>
+                    <select id="pais" name="pais" required>
+                        <option value="">-- Selecciona --</option>
+                        <option value="España">España</option>
+                        <option value="México">México</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Chile">Chile</option>
+                    </select>
+                    <span class="error" data-error-for="pais"></span>
+                </div>
+            </fieldset>
+
+            <!-- Paso 3 -->
+            <fieldset class="paso" data-paso="3">
+                <legend>Preferencias</legend>
+                <div class="campo">
+                    <label for="idioma">Idioma preferido</label>
+                    <select id="idioma" name="idioma" required>
+                        <option value="">-- Selecciona --</option>
+                        <option value="Español">Español</option>
+                        <option value="Inglés">Inglés</option>
+                        <option value="Francés">Francés</option>
+                    </select>
+                    <span class="error" data-error-for="idioma"></span>
+                </div>
+                <div class="campo">
+                    <p class="etiqueta-grupo">Intereses</p>
+                    <label class="inline"><input type="checkbox" name="intereses" value="Tecnología"> Tecnología</label>
+                    <label class="inline"><input type="checkbox" name="intereses" value="Deporte"> Deporte</label>
+                    <label class="inline"><input type="checkbox" name="intereses" value="Música"> Música</label>
+                    <label class="inline"><input type="checkbox" name="intereses" value="Viajes"> Viajes</label>
+                    <span class="error" data-error-for="intereses"></span>
+                </div>
+                <div class="campo">
+                    <label class="inline">
+                        <input type="checkbox" id="newsletter" name="newsletter"> Quiero recibir la newsletter
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Resumen -->
+            <section id="resumen" class="paso" data-paso="4">
+                <h2>Revisa tus datos</h2>
+                <div id="contenidoResumen"></div>
+            </section>
+
+            <div class="botonera">
+                <button type="button" id="btnAnterior" disabled>Anterior</button>
+                <button type="button" id="btnSiguiente">Siguiente</button>
+                <button type="submit" id="btnEnviar" class="oculto">Enviar</button>
+            </div>
+        </form>
+
+        <section id="finalizado" class="finalizado oculto">
+            <h2>¡Registro enviado!</h2>
+            <p>Estos son los datos que hemos recibido:</p>
+            <pre id="datosFinales"></pre>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

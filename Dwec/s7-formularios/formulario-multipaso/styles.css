@@ -1,0 +1,231 @@
+* { box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #eef2ff;
+    margin: 0;
+    padding: 2rem 1rem;
+    color: #1f2937;
+}
+
+.contenedor {
+    max-width: 620px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    color: #4338ca;
+}
+
+.progreso {
+    margin-bottom: 1.5rem;
+}
+
+.progreso-barra {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progreso-relleno {
+    height: 100%;
+    width: 33%;
+    background: linear-gradient(90deg, #6366f1, #4338ca);
+    transition: width 0.4s ease;
+}
+
+.pasos-indicador {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.paso-ind.activo {
+    color: #4338ca;
+}
+
+.paso-ind.completo {
+    color: #16a34a;
+}
+
+fieldset.paso,
+#resumen.paso {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+fieldset.paso.activo,
+#resumen.paso.activo {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(8px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+legend {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.campo {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+}
+
+.campo input,
+.campo select {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.campo input.invalido,
+.campo select.invalido {
+    border-color: #dc2626;
+    background: #fef2f2;
+}
+
+.etiqueta-grupo {
+    font-weight: 600;
+    margin: 0 0 0.4rem;
+    font-size: 0.9rem;
+}
+
+label.inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 400;
+    margin-right: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 0.8rem;
+    min-height: 1rem;
+    margin-top: 0.25rem;
+}
+
+.botonera {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.botonera button {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#btnAnterior {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+#btnAnterior:hover:not(:disabled) { background: #d1d5db; }
+#btnAnterior:disabled { opacity: 0.5; cursor: not-allowed; }
+
+#btnSiguiente,
+#btnEnviar {
+    background: #4338ca;
+    color: white;
+}
+
+#btnSiguiente:hover,
+#btnEnviar:hover { background: #3730a3; }
+
+#resumen h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+}
+
+#contenidoResumen {
+    background: #f9fafb;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border-left: 4px solid #4338ca;
+}
+
+#contenidoResumen .bloque {
+    margin-bottom: 0.75rem;
+}
+
+#contenidoResumen .bloque:last-child { margin-bottom: 0; }
+
+#contenidoResumen h3 {
+    margin: 0 0 0.25rem;
+    font-size: 0.95rem;
+    color: #4338ca;
+}
+
+#contenidoResumen dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+#contenidoResumen dt { font-weight: 600; color: #374151; }
+#contenidoResumen dd { margin: 0; }
+
+.finalizado {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #ecfdf5;
+    border: 2px solid #16a34a;
+    border-radius: 10px;
+}
+
+.finalizado h2 { margin-top: 0; color: #15803d; }
+
+.finalizado pre {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    overflow-x: auto;
+}
+
+.oculto { display: none; }

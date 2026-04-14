@@ -1,0 +1,107 @@
+* { box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 2rem;
+    color: #222;
+}
+
+main {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+}
+
+input {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #cfd4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3478f6;
+}
+
+input.invalido {
+    border-color: #d9534f;
+}
+
+input.valido {
+    border-color: #27ae60;
+}
+
+.error {
+    color: #d9534f;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    min-height: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #3478f6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:disabled {
+    background: #9fb9df;
+    cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+    background: #285bbd;
+}
+
+.resumen {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #e8f5ee;
+    border-left: 4px solid #27ae60;
+    border-radius: 6px;
+}
+
+.resumen h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.resumen ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.oculto {
+    display: none;
+}

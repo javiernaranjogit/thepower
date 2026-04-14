@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Dinámico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Dinámico</h1>
+        <div class="controles">
+            <input type="search" id="buscador" placeholder="Buscar por nombre...">
+            <select id="filtroCategoria">
+                <option value="">Todas las categorías</option>
+            </select>
+            <select id="orden">
+                <option value="">Ordenar por...</option>
+                <option value="asc">Precio ascendente</option>
+                <option value="desc">Precio descendente</option>
+            </select>
+        </div>
+        <p id="contador">0 productos</p>
+    </header>
+
+    <main>
+        <div id="grid" class="grid"></div>
+    </main>
+
+    <template id="tplProducto">
+        <article class="producto">
+            <img class="producto__img" alt="">
+            <div class="producto__body">
+                <h3 class="producto__nombre"></h3>
+                <span class="producto__categoria"></span>
+                <p class="producto__precio"></p>
+                <p class="producto__stock"></p>
+            </div>
+        </article>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

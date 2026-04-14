@@ -1,0 +1,136 @@
+* { box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem 1rem;
+    color: #1f2937;
+}
+
+.contenedor {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    margin-top: 0;
+    color: #0f172a;
+}
+
+.intro {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.campo-password label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    flex: 1;
+    padding: 0.75rem 5rem 0.75rem 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+#toggleVisibilidad {
+    position: absolute;
+    right: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    background: #e5e7eb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #374151;
+}
+
+#toggleVisibilidad:hover { background: #d1d5db; }
+
+.medidor {
+    margin: 1.5rem 0;
+}
+
+.barra {
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.barra-progreso {
+    height: 100%;
+    width: 0%;
+    background: #dc2626;
+    transition: width 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
+}
+
+.nivel-texto {
+    margin: 0.6rem 0 0;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.nivel-0 { color: #6b7280; }
+.nivel-1 { color: #dc2626; }
+.nivel-2 { color: #ea580c; }
+.nivel-3 { color: #ca8a04; }
+.nivel-4 { color: #16a34a; }
+.nivel-5 { color: #15803d; }
+
+.sugerencias {
+    background: #f9fafb;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border-left: 4px solid #2563eb;
+}
+
+.sugerencias h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: #1e3a8a;
+}
+
+.sugerencias ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.sugerencias li {
+    margin: 0.25rem 0;
+}
+
+.sugerencias li.cumplida {
+    color: #16a34a;
+    text-decoration: line-through;
+    opacity: 0.7;
+}

@@ -21,13 +21,37 @@
 // ─────────────────────────────────────────────
 
 function debounce(fn, delay) {
-    // TODO: devolver función que clearTimeout y setTimeout
+    let timer;
+
+    return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+    };
 }
 
 async function buscarAPI(termino) {
-    // TODO: fetch con query ?q=termino, imprimir resultados
+    try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users?q=" + encodeURIComponent(termino));
+        if (!res.ok) throw new Error("HTTP Error " + res.status);
+
+        const usuarios = await res.json();
+        console.log("Buscando: " + termino);
+        console.log("Resultados: " + usuarios.length);
+        return usuarios;
+    } catch (error) {
+        console.log("Error en la busqueda:", error.message);
+        return [];
+    }
 }
 
-// const buscarConDebounce = debounce(buscarAPI, 300);
-// TODO: llamar 3 veces seguidas con "a", "an", "ana"
-// TODO (opcional): una segunda ráfaga 1s después para ver que se reinicia
+const buscarConDebounce = debounce(buscarAPI, 300);
+
+buscarConDebounce("a");
+buscarConDebounce("an");
+buscarConDebounce("ana");
+
+setTimeout(() => {
+    buscarConDebounce("l");
+    buscarConDebounce("le");
+    buscarConDebounce("lea");
+}, 1000);

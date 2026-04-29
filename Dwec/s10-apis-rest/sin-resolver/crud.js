@@ -29,23 +29,74 @@
 const API = "https://jsonplaceholder.typicode.com/posts";
 
 async function listarPosts() {
-    // TODO: GET con _limit=5, imprimir [id] title
+    try {
+        const res = await fetch(API + "?_limit=5");
+        if (!res.ok) throw new Error("HTTP Error " + res.status);
+
+        const posts = await res.json();
+        posts.forEach(({ id, title }) => console.log("[" + id + "] " + title));
+        return posts;
+    } catch (error) {
+        console.log("Error al listar posts:", error.message);
+        return [];
+    }
 }
 
 async function crearPost(titulo, cuerpo) {
-    // TODO: POST con headers + body JSON.stringify
+    try {
+        const res = await fetch(API, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title: titulo, body: cuerpo, userId: 1 })
+        });
+        if (!res.ok) throw new Error("HTTP Error " + res.status);
+
+        const nuevo = await res.json();
+        console.log("Post creado:", nuevo);
+        return nuevo;
+    } catch (error) {
+        console.log("Error al crear post:", error.message);
+        return null;
+    }
 }
 
 async function editarPost(id, titulo, cuerpo) {
-    // TODO: PUT a /posts/:id con headers + body
+    try {
+        const res = await fetch(API + "/" + id, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id, title: titulo, body: cuerpo, userId: 1 })
+        });
+        if (!res.ok) throw new Error("HTTP Error " + res.status);
+
+        const editado = await res.json();
+        console.log("Post editado:", editado);
+        return editado;
+    } catch (error) {
+        console.log("Error al editar post:", error.message);
+        return null;
+    }
 }
 
 async function eliminarPost(id) {
-    // TODO: DELETE a /posts/:id, comprobar res.ok
+    try {
+        const res = await fetch(API + "/" + id, { method: "DELETE" });
+        if (!res.ok) throw new Error("HTTP Error " + res.status);
+
+        console.log("Post eliminado: " + id);
+        return true;
+    } catch (error) {
+        console.log("Error al eliminar post:", error.message);
+        return false;
+    }
 }
 
 async function demo() {
-    // TODO: listar → crear → editar(1) → eliminar(1) → listar
+    await listarPosts();
+    await crearPost("Nuevo post", "Contenido del post creado");
+    await editarPost(1, "Post editado", "Contenido actualizado");
+    await eliminarPost(1);
+    await listarPosts();
 }
 
 demo();

@@ -28,12 +28,32 @@ const TOTAL_POSTS = 100;
 const TOTAL_PAGINAS = TOTAL_POSTS / POSTS_POR_PAGINA;
 
 async function cargarPagina(pagina) {
-    // TODO: calcular start, fetch con _start y _limit, imprimir listado
-    //       y avisos de Anterior/Siguiente deshabilitados
+    if (pagina < 1 || pagina > TOTAL_PAGINAS) {
+        console.log("Pagina fuera de rango " + pagina);
+        return [];
+    }
+
+    const start = (pagina - 1) * POSTS_POR_PAGINA;
+    const url = API + "?_start=" + start + "&_limit=" + POSTS_POR_PAGINA;
+    try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("HTTP Error: " + res.status);
+        console.log("PAGINA " + pagina + " de " + TOTAL_PAGINAS);
+        const posts = await res.json();
+        posts.forEach(({ id, title }) => console.log("Id: " + id + " Titulo: " + title));
+        if (pagina === 1) console.log("[Anterior: deshabilitado]");
+        if (pagina === TOTAL_PAGINAS) console.log("[Siguiente: deshabilitado]");
+        return posts;
+    } catch (error) {
+        console.log("Error cargando la pagina: ", error.message);
+        return [];
+    }
 }
 
 async function demo() {
-    // TODO: await cargarPagina(1), (2) y (10)
+    await cargarPagina(1);
+    await cargarPagina(2);
+    await cargarPagina(10);
 }
 
 demo();

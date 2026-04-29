@@ -30,17 +30,52 @@
 // ─────────────────────────────────────────────
 
 async function fetchConTimeout(url, ms = 5000) {
-    // TODO: AbortController + setTimeout(abort) + fetch con signal
-    //       diferenciar AbortError, HTTP y error de red
-    //       clearTimeout en finally
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), ms);
+
+    try {
+        const res = await fetch(url, { signal: controller.signal });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res;
+    } catch (error) {
+        if (error.name === "AbortError") {
+            throw new Error("Timeout");
+        }
+
+        if (error.message.startsWith("HTTP ")) {
+            throw error;
+        }
+
+        throw new Error("Error de red");
+    } finally {
+        clearTimeout(timer);
+    }
 }
 
 async function pedirPost(id, ms) {
-    // TODO: llamar fetchConTimeout, parsear JSON, imprimir resultado o error
+    const url = "https://jsonplaceholder.typicode.com/posts/" + id;
+
+    try {
+        const res = await fetchConTimeout(url, ms);
+        const post = await res.json();
+        console.log("Post " + id + ":", post.title);
+        return post;
+    } catch (error) {
+        console.log("Error pidiendo post " + id + ": " + error.message);
+        return null;
+    }
 }
 
 async function demo() {
-    // TODO: 4 casos (ok, 404, timeout forzado, dominio inexistente)
+    await pedirPost(1, 5000);
+    await pedirPost(999, 5000);
+    await pedirPost(1, 1);
+
+    try {
+        await fetchConTimeout("https://dominio-inexistente-ejemplo-12345.com/posts/1", 5000);
+    } catch (error) {
+        console.log("Error con dominio inexistente: " + error.message);
+    }
 }
 
 demo();

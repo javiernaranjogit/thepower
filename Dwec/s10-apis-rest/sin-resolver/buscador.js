@@ -26,19 +26,37 @@ const URL_USERS = "https://jsonplaceholder.typicode.com/users";
 let todosUsuarios = [];
 
 async function obtenerUsuarios() {
-    // TODO: fetch + res.ok + return json (try/catch devolviendo [])
+    try {
+        const res = await fetch(URL_USERS);
+        if (!res.ok) throw new Error("HTTP Error " + res.status);
+        return await res.json();
+    } catch (error) {
+        console.log("Error al cargar usuarios: ", error.message);
+        return [];
+    }
 }
 
 function mostrar(usuarios) {
-    // TODO: forEach imprimiendo nombre | email | ciudad
+    console.log("Nombre | Email | Ciudad");
+    usuarios.forEach(({ name, email, address }) => {
+        console.log(name + " | " + email + " | " + address.city);
+    });
+    console.log("Total: " + usuarios.length);
 }
 
 function buscar(texto) {
-    // TODO: filter case-insensitive sobre todosUsuarios + mostrar()
+    const textoABuscar = texto.toLowerCase();
+    const filtrados = todosUsuarios.filter(u => u.name.toLowerCase().includes(textoABuscar));
+    console.log("Numero de resultados tras el filtro: " + filtrados.length);
+    mostrar(filtrados);
 }
 
 async function init() {
-    // TODO: await obtenerUsuarios(), mostrar, programar buscar() con setTimeout
+    todosUsuarios = await obtenerUsuarios();
+    mostrar(todosUsuarios);
+    setTimeout(() => buscar("Cle"), 2000);
+    setTimeout(() => buscar("Kur"), 3000);
+    setTimeout(() => buscar("holahola"), 4000);
 }
 
 init();

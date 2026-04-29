@@ -1,0 +1,103 @@
+:root {
+    --color-primario: #1DB954;
+    --color-fondo: #121212;
+    --color-superficie: #fdfdfd;
+    --color-texto: #FFFFFF;
+    --color-texto-sec: #B3B3B3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    background: var(--color-superficie);
+}
+
+h1 {
+    padding: 24px 16px;
+    font-size: 24px;
+}
+
+.grid-albumes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 16px;
+}
+
+.album-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.album-artista {
+    font-size: 12px;
+    color: var(--color-texto-sec);
+}
+
+.back-btn {
+    color: var(--color-texto);
+    text-decoration: none;
+    padding: 16px;
+}
+
+.player {
+    padding: 24px;
+    text-align: center;
+}
+
+.player-cover {
+    width: 280px;
+    height: 280px;
+    border-radius: 8px;
+    margin: 32px auto;
+    display: block;
+}
+
+.player-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.player-artist {
+    color: var(--color-texto-sec);
+    margin-bottom: 32px;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.player-controls button {
+    background: none;
+    border: none;
+    color: var(--color-texto);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.play-btn {
+    background: var(--color-primario) !important;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.album-link {
+    text-decoration: none;
+    color: inherit;
+}

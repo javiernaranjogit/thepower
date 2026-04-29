@@ -26,19 +26,47 @@
 const API = "https://jsonplaceholder.typicode.com/users";
 
 async function cargarUsuario(id) {
-    // TODO: fetch /users/:id, devolver {id, name}
+    const res = await fetch(API + "/" + id);
+    if (!res.ok) throw new Error("HTTP Error " + res.status);
+
+    const usuario = await res.json();
+    return { id: usuario.id, name: usuario.name };
 }
 
 async function cargarSecuencial(ids) {
-    // TODO: for + await, medir tiempo con Date.now()
+    const inicio = Date.now();
+    const usuarios = [];
+
+    for (const id of ids) {
+        usuarios.push(await cargarUsuario(id));
+    }
+
+    const tiempo = Date.now() - inicio;
+    console.log("Secuencial:", usuarios);
+    console.log("Tiempo secuencial: " + tiempo + "ms");
+    return { usuarios, tiempo };
 }
 
 async function cargarParalelo(ids) {
-    // TODO: Promise.all con ids.map(cargarUsuario), medir tiempo
+    const inicio = Date.now();
+    const usuarios = await Promise.all(ids.map(cargarUsuario));
+    const tiempo = Date.now() - inicio;
+
+    console.log("Paralelo:", usuarios);
+    console.log("Tiempo paralelo: " + tiempo + "ms");
+    return { usuarios, tiempo };
 }
 
 async function comparar(ids) {
-    // TODO: ejecutar ambas e imprimir el factor de mejora
+    try {
+        const secuencial = await cargarSecuencial(ids);
+        const paralelo = await cargarParalelo(ids);
+        const mejora = paralelo.tiempo === 0 ? 0 : secuencial.tiempo / paralelo.tiempo;
+
+        console.log("El paralelo fue " + mejora.toFixed(2) + " veces mas rapido");
+    } catch (error) {
+        console.log("Error comparando estrategias:", error.message);
+    }
 }
 
 comparar([1, 2, 3, 4, 5]);

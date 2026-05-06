@@ -1,0 +1,26 @@
+/* =============================================================
+   tokens.css
+   Design tokens exportados desde Figma (ver Mode 1.tokens.json).
+   Se declaran como custom properties en :root para que estén
+   disponibles globalmente vía var(--nombre-token).
+   ============================================================= */
+
+:root {
+    /* Colores: paleta base del tema. */
+    --color-bg: #0d1b2a;        /* Fondo general de la página */
+    --color-muted: #94a3b8;     /* Texto secundario / deshabilitado */
+    --color-primary: #1e6b4f;   /* Color de marca / acciones principales */
+    --color-secondary: #f4a261; /* Color de acento */
+    --color-surface: #1a2f3c;   /* Superficies elevadas (cards, modales) */
+    --color-text: #f1f5f9;      /* Texto principal sobre fondo oscuro */
+
+    /* Spacing: escala de separaciones (en px lógicos). */
+    --spacing-lg: 32;
+    --spacing-md: 16;
+    --spacing-sm: 8;
+
+    /* Tipografía: tamaños de fuente por jerarquía. */
+    --font-size-body: 16;
+    --font-size-h1: 48;
+    --font-size-h2: 36;
+}

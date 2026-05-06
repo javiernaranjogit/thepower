@@ -8,10 +8,19 @@
 </head>
 
 <body>
+    <!-- UI mínima de pruebas para apiService.js.
+         Cada botón dispara una demo definida en main.js
+         y los resultados se imprimen dentro de #log. -->
     <h1>Prueba de servicio de API</h1>
-    <button id="btnEjecutar"> Llamada servicios</button>
-    <button id="btnLimpiar">Limpiar log</button>
+    <button id="btnEjecutar"> Llamada servicios</button> <!-- CRUD completo -->
+    <button id="btnLimpiar">Limpiar log</button>         <!-- Vacía el log -->
+    <button id="btnBulkCreate">Bulk create</button>      <!-- Serie vs paralelo -->
+    <button id="cacheado">Gestion del cache</button>     <!-- Demo de caché TTL -->
+
+    <!-- Zona donde main.js va volcando los mensajes. -->
     <div id="log"></div>
+
+    <!-- type="module" para poder usar import/export en main.js. -->
     <script type="module" src="main.js"></script>
 </body>
 

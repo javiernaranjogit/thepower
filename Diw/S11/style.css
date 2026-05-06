@@ -1,0 +1,14 @@
+/* =============================================================
+   style.css
+   Hoja de estilos de la sesión S11 de DIW.
+   Importa los design tokens (variables CSS) definidos en
+   tokens.css y los aplica a los componentes del UI.
+   ============================================================= */
+
+/* Cargamos primero los tokens para poder usar var(--color-*). */
+@import url('tokens.css');
+
+/* Botón principal: usa el token de color primario como fondo. */
+.btn {
+    background: var(--color-primary);
+}

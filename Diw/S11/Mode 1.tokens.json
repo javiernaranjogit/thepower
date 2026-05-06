@@ -1,0 +1,119 @@
+{
+  "color-primary": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.11764705926179886,
+        0.41960784792900085,
+        0.30980393290519714
+      ],
+      "alpha": 1,
+      "hex": "#1E6B4F"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:1:3",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ]
+    }
+  },
+  "color-secondary": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.95686274766922,
+        0.6352941393852234,
+        0.3803921639919281
+      ],
+      "alpha": 1,
+      "hex": "#F4A261"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:1:4",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ]
+    }
+  },
+  "color-bg": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.05098039284348488,
+        0.10588235408067703,
+        0.16470588743686676
+      ],
+      "alpha": 1,
+      "hex": "#0D1B2A"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:1:5",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ]
+    }
+  },
+  "color-surface": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.10196078568696976,
+        0.18431372940540314,
+        0.23529411852359772
+      ],
+      "alpha": 1,
+      "hex": "#1A2F3C"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:1:6",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ]
+    }
+  },
+  "color-text": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.9450980424880981,
+        0.9607843160629272,
+        0.9764705896377563
+      ],
+      "alpha": 1,
+      "hex": "#F1F5F9"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:1:7",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ]
+    }
+  },
+  "color-muted": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.5803921818733215,
+        0.6392157077789307,
+        0.7215686440467834
+      ],
+      "alpha": 1,
+      "hex": "#94A3B8"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:1:8",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ]
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Mode 1"
+  }
+}

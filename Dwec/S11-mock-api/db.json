@@ -14,6 +14,196 @@
       "id": 3,
       "titulo": "Crear API Service",
       "completada": false
+    },
+    {
+      "titulo": "Paralelo 1",
+      "completada": false,
+      "id": 4
+    },
+    {
+      "titulo": "Paralelo 2",
+      "completada": true,
+      "id": 5
+    },
+    {
+      "titulo": "Paralelo 3",
+      "completada": false,
+      "id": 6
+    },
+    {
+      "titulo": "Paralelo 4",
+      "completada": true,
+      "id": 7
+    },
+    {
+      "titulo": "Paralelo 5",
+      "completada": true,
+      "id": 8
+    },
+    {
+      "titulo": "Paralelo 1",
+      "completada": false,
+      "id": 9
+    },
+    {
+      "titulo": "Paralelo 2",
+      "completada": true,
+      "id": 10
+    },
+    {
+      "titulo": "Paralelo 3",
+      "completada": false,
+      "id": 11
+    },
+    {
+      "titulo": "Paralelo 4",
+      "completada": true,
+      "id": 12
+    },
+    {
+      "titulo": "Paralelo 5",
+      "completada": true,
+      "id": 13
+    },
+    {
+      "titulo": "Paralelo 1",
+      "completada": false,
+      "id": 14
+    },
+    {
+      "titulo": "Paralelo 2",
+      "completada": true,
+      "id": 15
+    },
+    {
+      "titulo": "Paralelo 3",
+      "completada": false,
+      "id": 16
+    },
+    {
+      "titulo": "Paralelo 4",
+      "completada": true,
+      "id": 17
+    },
+    {
+      "titulo": "Paralelo 5",
+      "completada": true,
+      "id": 18
+    },
+    {
+      "titulo": "Paralelo 1",
+      "completada": false,
+      "id": 19
+    },
+    {
+      "titulo": "Paralelo 2",
+      "completada": true,
+      "id": 20
+    },
+    {
+      "titulo": "Paralelo 3",
+      "completada": false,
+      "id": 21
+    },
+    {
+      "titulo": "Paralelo 4",
+      "completada": true,
+      "id": 22
+    },
+    {
+      "titulo": "Paralelo 5",
+      "completada": true,
+      "id": 23
+    },
+    {
+      "titulo": "Paralelo 1",
+      "completada": false,
+      "id": 24
+    },
+    {
+      "titulo": "Paralelo 2",
+      "completada": true,
+      "id": 25
+    },
+    {
+      "titulo": "Paralelo 3",
+      "completada": false,
+      "id": 26
+    },
+    {
+      "titulo": "Paralelo 1",
+      "completada": false,
+      "id": 27
+    },
+    {
+      "titulo": "Paralelo 2",
+      "completada": true,
+      "id": 28
+    },
+    {
+      "titulo": "Paralelo 3",
+      "completada": false,
+      "id": 29
+    },
+    {
+      "titulo": "Paralelo 4",
+      "completada": true,
+      "id": 30
+    },
+    {
+      "titulo": "Paralelo 5",
+      "completada": true,
+      "id": 31
+    },
+    {
+      "titulo": "Paralelo 1",
+      "completada": false,
+      "id": 32
+    },
+    {
+      "titulo": "Paralelo 2",
+      "completada": true,
+      "id": 33
+    },
+    {
+      "titulo": "Paralelo 3",
+      "completada": false,
+      "id": 34
+    },
+    {
+      "titulo": "Paralelo 4",
+      "completada": true,
+      "id": 35
+    },
+    {
+      "titulo": "Paralelo 5",
+      "completada": true,
+      "id": 36
+    },
+    {
+      "titulo": "Paralelo 1",
+      "completada": false,
+      "id": 37
+    },
+    {
+      "titulo": "Paralelo 2",
+      "completada": true,
+      "id": 38
+    },
+    {
+      "titulo": "Paralelo 3",
+      "completada": false,
+      "id": 39
+    },
+    {
+      "titulo": "Paralelo 4",
+      "completada": true,
+      "id": 40
+    },
+    {
+      "titulo": "Paralelo 5",
+      "completada": true,
+      "id": 41
     }
   ]
 }
